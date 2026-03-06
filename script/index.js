@@ -18,14 +18,22 @@ const displayLevelWord =(words)=>{
     const wordContainer= document.getElementById('word-container');
     wordContainer.innerHTML = "";
 
+     // {
+    // "id": 82,
+    // "level": 1,
+    // "word": "Car",
+    // "meaning": "গাড়ি",
+    // "pronunciation": "কার"
+    // }
+
     words.forEach(word =>{
         console.log(word);
         const card= document.createElement('div');
         card.innerHTML = `
         <div class="bg-white rounded-xl shadow-sm text-center py-10 px-5 space-y-4">
-            <h2 class="font-bold text-2xl">Eager</h2>
+            <h2 class="font-bold text-2xl">${word.word}</h2>
             <p class="font-semibold">Meaning /Pronounciation</p>
-            <div class="font-medium text-2xl font-bangla">"আগ্রহী / ইগার"</div>
+            <div class="font-medium text-2xl font-bangla">"${word.meaning} / ${word.pronunciation}"</div>
 
             <div class="flex justify-between items-center">
               <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
@@ -45,6 +53,8 @@ const displayLesson = (lessons) =>{
     //1. get the container & empty
     const levelContsiner = document.getElementById('level-contsiner')
     levelContsiner.innerHTML = "";
+
+   
 
     //2. get into every lessons
     for( let lesson of lessons){
